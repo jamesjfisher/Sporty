@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary login-navbar">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="app-logo">
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="padding-top-50px">
+  <div class="login-card login-page-center padding-50px ">
+    <form (ngSubmit)="loginUser()" #f="ngForm">
+      <h2>Sporty</h2>
+      <div *ngIf="errMsg" class="error-message">{{errMsg}}</div>
+      <div>
+        <mat-input-container class="input-form-field">
+          <input matInput type="username" name="username" placeholder="Username" required [(ngModel)]="model.username">
+        </mat-input-container>
+      </div>
+      <div>
+        <mat-input-container class="input-form-field">
+          <input matInput type="password" name="password" placeholder="Password" required [(ngModel)]="model.password">
+        </mat-input-container>
+      </div>
+      <br/>
+      <div>
+        <button mat-raised-button color="primary" class="width-100pct" type="submit">Sign In</button>
+      </div>
+    </form>
+  </div>
+  <!-- div ."card" ends -->
+</div>
+

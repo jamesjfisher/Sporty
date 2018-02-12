@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="jfisher" id="1">
+        <createSequence sequenceName="fac_charge_adjustments_id_seq"/>
+    </changeSet>
+    <changeSet author="jfisher" id="2">
+        <createSequence sequenceName="fac_charges_id_seq"/>
+    </changeSet>
+    <changeSet author="jfisher" id="3">
+        <createSequence sequenceName="fac_payment_adjustments_id_seq"/>
+    </changeSet>
+    <changeSet author="jfisher" id="4">
+        <createSequence sequenceName="fac_payments_id_seq"/>
+    </changeSet>
+    <changeSet author="jfisher" id="5">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="jfisher" id="6">
+        <createSequence sequenceName="seq_myuser_id"/>
+    </changeSet>
+    <changeSet author="jfisher" id="7">
+        <createSequence sequenceName="seq_role_id"/>
+    </changeSet>
+    <changeSet author="jfisher" id="8">
+        <createSequence sequenceName="seq_user_details_id"/>
+    </changeSet>
+    <changeSet author="jfisher" id="9">
+        <createTable tableName="audit_log">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actor" type="VARCHAR(255)"/>
+            <column name="class_name" type="VARCHAR(255)"/>
+            <column name="date_created" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="event_name" type="VARCHAR(255)"/>
+            <column name="last_updated" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="new_value" type="VARCHAR(255)"/>
+            <column name="old_value" type="VARCHAR(255)"/>
+            <column name="persisted_object_id" type="VARCHAR(255)"/>
+            <column name="persisted_object_version" type="BIGINT"/>
+            <column name="property_name" type="VARCHAR(255)"/>
+            <column name="uri" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="10">
+        <createTable tableName="dim_date">
+            <column name="id" type="BIGINT"/>
+            <column name="month" type="INT"/>
+            <column name="quarter" type="INT"/>
+            <column name="year" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="11">
+        <createTable tableName="dim_location">
+            <column name="id" type="INT"/>
+            <column name="accountid" type="INT"/>
+            <column name="practiceid" type="INT"/>
+            <column name="name" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="12">
+        <createTable tableName="dim_payers">
+            <column name="id" type="INT"/>
+            <column name="accountid" type="INT"/>
+            <column name="name" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="13">
+        <createTable tableName="dim_practice">
+            <column name="id" type="INT"/>
+            <column name="accountid" type="INT"/>
+            <column name="name" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="14">
+        <createTable tableName="dim_provider">
+            <column name="id" type="INT"/>
+            <column name="accountid" type="INT"/>
+            <column name="name" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="15">
+        <createTable tableName="fac_charge_adjustments">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="fac_charge_adjustments_pkey"/>
+            </column>
+            <column name="accountid" type="INT"/>
+            <column name="practiceid" type="INT"/>
+            <column name="posteddateid" type="BIGINT"/>
+            <column name="amt" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="16">
+        <createTable tableName="fac_charges">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="fac_charges_pkey"/>
+            </column>
+            <column name="accountid" type="INT"/>
+            <column name="practiceid" type="INT"/>
+            <column name="locationid" type="INT"/>
+            <column name="posteddateid" type="BIGINT"/>
+            <column name="amt" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="17">
+        <createTable tableName="fac_payment_adjustments">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="fac_payment_adjustments_pkey"/>
+            </column>
+            <column name="accountid" type="INT"/>
+            <column name="practiceid" type="INT"/>
+            <column name="locationid" type="INT"/>
+            <column name="providerid" type="INT"/>
+            <column name="posteddateid" type="BIGINT"/>
+            <column name="amt" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="18">
+        <createTable tableName="fac_payments">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="fac_payments_pkey"/>
+            </column>
+            <column name="accountid" type="INT"/>
+            <column name="practiceid" type="INT"/>
+            <column name="locationid" type="INT"/>
+            <column name="providerid" type="INT"/>
+            <column name="posteddateid" type="BIGINT"/>
+            <column name="amt" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="19">
+        <createTable tableName="myuser">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account_expired" type="BOOL"/>
+            <column name="account_locked" type="BOOL"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="enabled" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="password_expired" type="BOOL"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="version" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="20">
+        <createTable tableName="registration_code">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_created" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="21">
+        <createTable tableName="role">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="22">
+        <createTable tableName="user_details">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_of_birth" type="TIMESTAMP WITH TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="23">
+        <createTable tableName="user_role">
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jfisher" id="24">
+        <addPrimaryKey columnNames="id" constraintName="audit_logPK" tableName="audit_log"/>
+    </changeSet>
+    <changeSet author="jfisher" id="25">
+        <addPrimaryKey columnNames="id" constraintName="myuser_pkey" tableName="myuser"/>
+    </changeSet>
+    <changeSet author="jfisher" id="26">
+        <addPrimaryKey columnNames="id" constraintName="registration_PK" tableName="registration_code"/>
+    </changeSet>
+    <changeSet author="jfisher" id="27">
+        <addPrimaryKey columnNames="id" constraintName="rolePK" tableName="role"/>
+    </changeSet>
+    <changeSet author="jfisher" id="28">
+        <addPrimaryKey columnNames="id" constraintName="user_detailsPK" tableName="user_details"/>
+    </changeSet>
+    <changeSet author="jfisher" id="29">
+        <addPrimaryKey columnNames="role_id, user_id" constraintName="user_rolePK" tableName="user_role"/>
+    </changeSet>
+    <changeSet author="jfisher" id="30">
+        <createIndex indexName="authority_uniq_1443025978658" tableName="role" unique="true">
+            <column name="authority"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="jfisher" id="31">
+        <createIndex indexName="email_uniq_1443025978654" tableName="myuser" unique="true">
+            <column name="email"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="jfisher" id="32">
+        <createIndex indexName="user_id_uniq_1443025978661" tableName="user_details" unique="true">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="jfisher" id="33">
+        <createIndex indexName="username_uniq_1443025978656" tableName="myuser" unique="true">
+            <column name="username"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="jfisher" id="34">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_role" constraintName="FK_apcc8lxk2xnug8377fatvbn04" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="myuser"/>
+    </changeSet>
+    <changeSet author="jfisher" id="35">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_details" constraintName="FK_f4pdcamta635qqbhgcyqvrg7f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="myuser"/>
+    </changeSet>
+    <changeSet author="jfisher" id="36">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_role" constraintName="FK_it77eq964jhfqtu54081ebtio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="role"/>
+    </changeSet>
+    <changeSet author="jfisher" id="37">
+        <sql><![CDATA[
+            INSERT INTO myuser (id, account_expired, account_locked, email, enabled, password, password_expired,
+            username, version) VALUES (1, false, false, 'admin@pulseinc.com', true,
+            '$2a$10$r/6gucm.6KFQE0WSl5jovOCL7ZVHUUM5xSg5YPSQJF.6EpKWOrDNe', false, 'admin', 0);
+
+            INSERT INTO role (id, version, authority) VALUES (1, 0, 'ROLE_ADMIN');
+            INSERT INTO role (id, version, authority) VALUES (2, 0, 'ROLE_USER');
+            INSERT INTO role (id, version, authority) VALUES (3, 0, 'ROLE_EDI');
+
+            INSERT INTO user_details (id, version, date_of_birth, first_name, last_name, user_id)
+            VALUES (1, 0, '1982-03-09 23:00:00.000000', 'Nic', 'Admin', 1);
+
+            INSERT INTO public.user_role (role_id, user_id) VALUES (1, 1);
+            INSERT INTO public.user_role (role_id, user_id) VALUES (2, 1);
+            INSERT INTO public.user_role (role_id, user_id) VALUES (3, 1);
+        ]]></sql>
+
+        <rollback>
+            <sql><![CDATA[
+                SELECT 1;
+            ]]></sql>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

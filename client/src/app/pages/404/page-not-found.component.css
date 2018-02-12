@@ -1,0 +1,10 @@
+div.content {
+  width:100%;
+  min-height:40px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

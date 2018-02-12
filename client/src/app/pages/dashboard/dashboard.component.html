@@ -1,0 +1,83 @@
+<div class="width-100pct height-100pct">
+  <mat-toolbar class="dashboard-header">
+    <mat-toolbar-row class="welcome collapse navbar-collapse padding-10px">
+      <a class="mr-3">LEADERBOARD</a>
+      <span class="example-spacer"></span>
+      <div *ngIf="userService.isLoggedIn()">
+          <a class="mr-3">{{ userService.getUsername() }}</a>
+          <button mat-raised-button color="primary" (click)="logout()">Sign Out
+          </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="dashboard-content">
+    <div class="dashboard-left">
+      <mat-nav-list class="tester">
+        <h3 matLine> Make Picks </h3>
+        <mat-divider></mat-divider>
+        <a mat-list-item href="..." > NFL </a>
+        <a mat-list-item href="..." > College </a>
+      </mat-nav-list>
+    </div>
+    <div class="dashboard-center">
+
+    </div>
+    <div class="dashboard-right">
+
+    </div>
+  </div>
+
+  <!--<div class="row">-->
+    <!--<div class="column"></div>-->
+    <!--<div class="column"></div>-->
+    <!--<div class="column"></div>-->
+  <!--</div>-->
+
+  <!--<mat-sidenav-container class="sidenav-container" autosize>-->
+    <!--<mat-sidenav #sidenav mode="side" opened="true" (mouseenter)="isExpanded = !isExpanded"-->
+                 <!--(mouseleave)="isExpanded = !isExpanded">-->
+      <!--<mat-nav-list class="padding-0">-->
+        <!--<mat-list-item>-->
+          <!--<p matLine *ngIf="isExpanded" class="sidenav-section-title">CONTROLLERS</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-group"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded">Account Manager</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-building"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded">Practice Manager</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-stethoscope"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded">Provider Manager</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-user"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded" [routerLink]="'/dashboard/pcuser'">User Manager</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<p matLine *ngIf="isExpanded" class="sidenav-section-title">EXTRAS</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-file"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded">Privacy Policy</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-bullhorn"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded" [routerLink]="'/dashboard/announcement'">Announcements</p>-->
+        <!--</mat-list-item>-->
+        <!--<mat-list-item>-->
+          <!--<mat-icon mat-list-icon><i class="fa fa-info-circle"></i></mat-icon>-->
+          <!--<p matLine *ngIf="isExpanded">Audit Log</p>-->
+        <!--</mat-list-item>-->
+      <!--</mat-nav-list>-->
+    <!--</mat-sidenav>-->
+
+    <!--<div class="dashboard-content">-->
+      <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+  <!--</mat-sidenav-container>-->
+</div>
+

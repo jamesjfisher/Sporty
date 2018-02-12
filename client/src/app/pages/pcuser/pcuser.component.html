@@ -1,0 +1,36 @@
+<h3>Pulse Cloud User</h3>
+
+<mat-form-field class="full-width">
+  <input matInput *ngIf="config.filtering" placeholder="Filter all columns"
+         [ngTableFiltering]="config.filtering"
+         (tableChanged)="onChangeTable(config)"/>
+</mat-form-field>
+
+<button mat-raised-button>Create User</button>
+
+<ng-table [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+</ng-table>
+
+<pagination *ngIf="config.paging && length > itemsPerPage"
+            class="pagination-sm"
+            [(ngModel)]="page"
+            [totalItems]="length"
+            [itemsPerPage]="itemsPerPage"
+            [maxSize]="maxSize"
+            [boundaryLinks]="false"
+            [rotate]="true"
+            previousText="&lsaquo;"
+            nextText="&rsaquo;"
+            (pageChanged)="onChangeTable(config, $event)"
+            (numPages)="numPages = $event">
+</pagination>
+
+<!--<mat-paginator *ngIf="config.paging && length > itemsPerPage" #paginator-->
+               <!--[length]="length"-->
+               <!--[pageIndex]="0"-->
+               <!--[pageSize]="5"-->
+               <!--[pageSizeOptions]="[5, 10, 25, 100]">-->
+<!--</mat-paginator>-->

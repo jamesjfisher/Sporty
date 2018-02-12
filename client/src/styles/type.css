@@ -1,0 +1,182 @@
+/*
+
+Grouping all the headlines, paragraph, label and anchor tags
+with one font-fmaily declaration makes it easy to switch out
+fonts in the future
+
+Default to color #666 - but could be changed by adding a
+color to a single element
+
+*/
+
+h1, h2, h3, h4, h5, h6, p, label, a {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #666;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #666;
+  font-weight: 600;
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+	line-height: 32px;
+	font-size: 20px;
+  padding-left: 25px;
+  color: #ffffff;
+}
+
+h5 {
+	font-weight: lighter;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+h6 {
+	height: 24px;
+	/*width: 200px;*/
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+
+
+p {
+	letter-spacing: .1px;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 24px;
+}
+
+	p.directional {
+		font-size: 14px;
+		font-style: italic;
+		color: #666;
+		line-height: 16px;
+		margin-top: 4px;
+		margin-left: 234px;
+		margin-bottom: 16px;
+	}
+
+a {
+	color: #2A99C9;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus {
+	border: 0;
+	outline: 0;
+	background-color: #D9EFF8;
+}
+
+	a.button-primary {
+		padding: 10px;
+		text-align: center;
+		color: #fff;
+		background-color: #2A99C9;
+		border: 1px solid #2e345e;
+		border-radius: 3px;
+	}
+
+	a.button-primary:hover {
+		text-decoration: none;
+		background-color: #508cad;
+	}
+
+	a.button-primary:focus {
+		box-shadow: 0 0 5px rgba(42, 153, 201, 1);
+		border: 1px solid rgba(42, 153, 201, 1);
+	}
+
+label {
+	margin-bottom: 2px;
+	/*line-height: 24px;*/
+}
+
+	label.rightJust {
+		height: 24px;
+		width: 220px;
+		float: left;
+		text-align: right;
+		margin-top: 3px;
+		margin-right: 8px;
+	}
+
+hr {
+	height: 1px;
+	border: 0;
+	outline: 0;
+	margin-top: 0px;
+	margin-bottom: 8px;
+	background-color: #dfdfdf;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	height: 24px;
+	width: 100px;
+	color: #666666;
+	font-family: "Source Sans Pro";
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	text-transform: uppercase;
+	background-color: #F9F9F9;
+	padding-left: 8px;
+	padding-right: 8px;
+	border: 1px solid #dfdfdf;
+}
+ tr {
+	 border: 1px solid #dfdfdf;
+	 background-color: #fff;
+ }
+
+ td {
+	height: 24px;
+	width: 80px;
+	color: #666666;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	padding-left: 8px;
+	padding-right: 8px;
+ }
+
+ th.action-column, td.action-column {
+	 width: 24px;
+	 max-width: 24px;
+	 text-align: center;
+ }
+
+ tr.table-footer {
+	 height: 26px;
+	 width: 100%;
+	 background-color: #F9F9F9;
+	 padding-left: 8px;
+	 padding-right: 8px;
+	 border: 1px solid #dfdfdf;
+ }

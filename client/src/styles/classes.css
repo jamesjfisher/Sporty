@@ -1,0 +1,158 @@
+.app-logo {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 18px);
+  height: 36px;
+  width: 36px;
+  background-size: 100% 100%;
+}
+
+.login-card {
+  padding: 20px;
+  margin: 0 auto;
+  top: 50px;
+  width: 280px;
+  min-height: 300px;
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, .09);
+  background-color: #fff;
+}
+
+.login-navbar {
+  min-height: 50px;
+}
+
+.sidenav-section {
+  padding: 0px;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 250px;
+}
+
+.sidenav-section-title {
+  color: #787878;
+  padding: 10px;
+  text-align: center !important;
+  outline: 1px solid #eceeef !important;
+}
+
+.sidenav-item {
+  width: 100%;
+  padding: 10px;
+  /*border-bottom: 1px solid #eceeef !important;*/
+  outline: 1px solid #eceeef !important;
+  border-radius: 0px !important;
+}
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+.padding-10px {
+  padding: 10px;
+}
+
+.padding-25px {
+  padding: 25px;
+}
+
+.padding-50px {
+  padding: 50px;
+}
+
+.padding-left-30px {
+  padding-left: 30px;
+}
+
+.padding-left-5px {
+  padding-left: 5px;
+}
+
+.padding-right-30px {
+  padding-right: 30px;
+}
+
+.padding-top-50px {
+  padding-top: 50px;
+}
+
+.padding-bottom-20px {
+  padding-bottom: 20px;
+}
+
+.padding-bottom-50px {
+  padding-bottom: 50px;
+}
+
+.margin-right-0 {
+  margin-right: 0px;
+}
+
+.margin-right-10px {
+  margin-right: 10px;
+}
+
+.margin-top-5px {
+  margin-top: 5px;
+}
+
+.margin-bottom-5px {
+  margin-bottom: 5px;
+}
+
+.float-right {
+  float: right;
+}
+
+.height-60 {
+  height: 60px;
+}
+
+.height-100pct {
+  height: 100%;
+}
+
+.width-100pct {
+  width: 100% !important;
+}
+
+.min-width-50px {
+  min-width: 50px !important;
+}
+
+.welcome {
+  color: #FFFFFF;
+  font-size: 13px;
+  font-size: 1.0rem;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: left;
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.white-text {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.dashboard-body {
+  height: calc(100% - 126px) !important;
+  width: calc(100% - 126px) !important;
+}
+
+
+.bodyMain {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+}

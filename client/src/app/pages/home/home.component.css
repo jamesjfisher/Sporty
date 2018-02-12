@@ -1,0 +1,17 @@
+.sidenav-title {
+  width: 120px;
+  background-color: #73AD21;
+  color:#ffffff;
+}
+
+span.title {
+  padding:10px;
+}
+
+div.content {
+  margin-left: 170px;
+  padding: 1em;
+  overflow: hidden;
+  float:left;
+}
+

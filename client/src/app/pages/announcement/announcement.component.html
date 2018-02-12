@@ -1,0 +1,29 @@
+<h3>Announcement</h3>
+
+<button mat-raised-button (click)="drawer.toggle()">Create Announcement</button>
+
+<ng-table [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+</ng-table>
+
+<pagination *ngIf="config.paging && length > itemsPerPage"
+            class="pagination-sm"
+            [(ngModel)]="page"
+            [totalItems]="length"
+            [itemsPerPage]="itemsPerPage"
+            [maxSize]="maxSize"
+            [boundaryLinks]="false"
+            [rotate]="true"
+            previousText="&lsaquo;"
+            nextText="&rsaquo;"
+            (pageChanged)="onChangeTable(config, $event)"
+            (numPages)="numPages = $event">
+</pagination>
+
+<mat-drawer #drawer class="example-sidenav" mode="over" position="end">
+
+</mat-drawer>
+
+
